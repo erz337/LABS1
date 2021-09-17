@@ -17,7 +17,7 @@
 
 ```json
 {
-  "items": [
+  ****"items": [
     {
       "name": "Ivanov Petr",
       "group": "1",
@@ -35,7 +35,7 @@
       "group": "IU8-31",
       "avg": 3.33,
       "debt": [
-        "C++",
+        "C++",``
         "Linux",
         "Network"
       ]
@@ -44,7 +44,7 @@
   "_meta": {
     "count": 3
   }
-}
+}****
 ```
 
 И иллюстрацию того, что должна вывести программа после обработки данного файла.
@@ -81,12 +81,12 @@
 ```cpp
 // include/student.hpp
 
-struct Student {
+`struct Student {
     std::string name;
     std::any group;
     std::any avg;
     std::any debt;
-}
+}`
 ```
 
 ```cpp

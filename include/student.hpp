@@ -4,6 +4,13 @@
 #define INCLUDE_STUDENT_HPP_
 
 #include <nlohmann/json.hpp>
+#include <any>
 int get_name();
+struct Student {
+  std::string name;
+  std::any group;
+  std::any avg;
+  std::any debt;
+}
 
 #endif // INCLUDE_HEADER_HPP_
