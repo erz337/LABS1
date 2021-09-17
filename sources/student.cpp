@@ -1,3 +1,6 @@
 // Copyright 2020 Your Name <your_email>
+#include <student.hpp>
 
-#include <header.hpp>
+int get_name(){
+  return 0;
+}
