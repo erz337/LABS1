@@ -1,17 +1,8 @@
 // Copyright 2020 Your Name <your_email>
 #include <student.hpp>
 
-int get_name(){
-  return 0;
   using nlohmann::json;
 
-  void from_json(const json& j, student_t& s) {
-
-    s.name = get_name(j.at("group"));
-    s.group = get_group(j.at("group"));
-    s.avg = get_avg(j.at("avg"));
-    s.debt = get_group(j.at("debt"));
-  }
 
   auto get_name(const json& j) -> std::string {
     return j.get<std::string>();
@@ -39,8 +30,19 @@ int get_name(){
 
   auto get_group(const json& j) -> std::any {
     if (j.is_string())
-      return = j.get<std::string>();
+      return j.get<std::string>();
     else
       return j.get<std::size_t>();
   }
+
+
+  void from_json(const json& j, Student& s) {
+
+    s.name = get_name(j.at("group"));
+    s.group = get_group(j.at("group"));
+    s.avg = get_avg(j.at("avg"));
+    s.debt = get_debt(j.at("debt"));
+  }
+auto read_file(nlohmann::json data){
+
 }
