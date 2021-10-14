@@ -95,3 +95,4 @@ install(EXPORT "${PROJECT_NAME}-targets"
         NAMESPACE "${PROJECT_NAME}::"
         DESTINATION "lib/cmake"
         )
+add_definitions("-DPATH_TO_JSON=\"${CMAKE_SOURCE_DIR}/kekes.json\"")
