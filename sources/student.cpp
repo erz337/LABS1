@@ -48,7 +48,7 @@ void print(const Student& student, std::ostream& os){
   if (student.group.type() == typeid(std::string)){
     os << " " << std::any_cast<std::string>(student.group);
     std::size_t i = 10;
-    for(;i-std::any_cast<std::string>(student.group).length()!=0;i--){
+    for(; i-std::any_cast<std::string>(student.group).length() != 0; i--){
       os << " ";
     }
     os << "|";
@@ -66,7 +66,7 @@ void print(const Student& student, std::ostream& os){
   } else {
     os << " " << std::any_cast<std::size_t>(student.avg);
     std::size_t i = 0;
-    for(;i<5-(std::any_cast<std::size_t>(student.avg)/10);i++){
+    for(; i<5-(std::any_cast<std::size_t>(student.avg)/10); i++){
       os << " ";
     }
     os << "|";
@@ -77,7 +77,7 @@ void print(const Student& student, std::ostream& os){
   } else if (student.debt.type() == typeid(std::string)) {
     os << " " << std::any_cast<std::string>(student.debt);
     std::size_t i = 10;
-    for(;i - std::any_cast<std::string>(student.debt).length()!=0;i--){
+    for(; i - std::any_cast<std::string>(student.debt).length() != 0; i--){
       os << " ";
     }
     os << "|" << std::endl;
