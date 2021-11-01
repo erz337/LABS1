@@ -1,3 +1,5 @@
+// Copyright 2021 Alexander <novikovwarlock@yandex.ru>
+
 #ifndef INCLUDE_STUDENT_HPP_
 #define INCLUDE_STUDENT_HPP_
 #include <any>

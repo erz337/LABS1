@@ -1,3 +1,5 @@
+// Copyright 2021 Alexander <novikovwarlock@yandex.ru>
+
 #include <student.hpp>
 
 
