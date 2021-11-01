@@ -20,7 +20,8 @@ HunterGate(
         SHA1 "95c47c92f68edb091b5d6d18924baabe02a6962a"
 )
 
-project(parser VERSION 0.1.0)
+# TODO: rename project and delete this comment
+project(template VERSION 0.1.0)
 string(APPEND CMAKE_CXX_FLAGS " -pedantic -Werror -Wall -Wextra")
 string(APPEND CMAKE_CXX_FLAGS " -Wno-unused-command-line-argument")
 string(APPEND CMAKE_CXX_FLAGS " -Wshadow -Wnon-virtual-dtor")
@@ -38,6 +39,7 @@ add_library(${PROJECT_NAME} STATIC
 
 add_executable(demo
         ${CMAKE_CURRENT_SOURCE_DIR}/demo/main.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/sources/student.cpp
         )
 
 target_include_directories(${PROJECT_NAME} PUBLIC
@@ -45,7 +47,6 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         "$<INSTALL_INTERFACE:include>"
         )
 
-target_link_libraries(${PROJECT_NAME} nlohmann_json::nlohmann_json)
 target_link_libraries(demo ${PROJECT_NAME})
 
 if(BUILD_TESTS)
@@ -62,7 +63,7 @@ if(BUILD_COVERAGE)
   set(ENABLE_COVERAGE ON CACHE BOOL "Enable coverage build." FORCE)
   list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/tools/coverage/cmake")
   find_package(codecov)
-  string(APPEND CMAKE_CXX_FLAGS " —coverage")
+  string(APPEND CMAKE_CXX_FLAGS " --coverage")
   add_coverage(${PROJECT_NAME})
   add_coverage(tests)
   coverage_evaluate()
@@ -95,3 +96,9 @@ install(EXPORT "${PROJECT_NAME}-targets"
         NAMESPACE "${PROJECT_NAME}::"
         DESTINATION "lib/cmake"
         )
+
+
+target_link_libraries(${PROJECT_NAME} nlohmann_json::nlohmann_json)
+
+add_definitions("-DPATH_TO_JSON=\"${CMAKE_SOURCE_DIR}/test_file1.json\"")
+add_definitions("-DPATH_TO_JSON2=\"${CMAKE_SOURCE_DIR}/test_file2.json\"")
