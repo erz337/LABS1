@@ -1,4 +1,4 @@
-// Copyright 2021 Alexander <novikovwarlock@yandex.ru>
+// Copyright 2021 Danila <erzunov2002@gmail.com>
 
 #ifndef INCLUDE_STUDENT_HPP_
 #define INCLUDE_STUDENT_HPP_
